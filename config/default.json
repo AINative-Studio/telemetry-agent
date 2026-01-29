@@ -1,0 +1,11 @@
+{
+  "polling_interval": 5.0,
+  "context_threshold": 80,
+  "sensor_timeout": 5.0,
+  "enable_zerodb": false,
+  "zerodb_api_key": null,
+  "zerodb_project_id": null,
+  "zerodb_enable_logging": true,
+  "log_level": "INFO",
+  "log_format": "json"
+}
