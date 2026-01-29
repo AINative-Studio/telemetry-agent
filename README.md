@@ -1,4 +1,8 @@
-# Context Agent (Sentinel)
+# Context Agent
+
+[![License](https://img.shields.io/badge/license-Proprietary-red.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/downloads/)
+[![Status](https://img.shields.io/badge/status-in%20development-yellow.svg)](https://github.com/AINative-Studio/telemetry-agent/issues)
 
 > **Codename:** Cody-Context-Agent
 > **Type:** Local Context Monitoring Agent
@@ -58,6 +62,20 @@ The Context Agent is the authoritative sensing mechanism for detecting and expos
 
 ## Quick Start
 
+### Test the Sensor Script
+
+```bash
+# Test sensor with sample input
+echo '{"model":"claude-sonnet-4","context_window":{"max_tokens":200000,"tokens_used":50000}}' | scripts/context_sensor.sh
+
+# Output: [claude-sonnet-4] 📁 context-agent 🌿 main | 📊 25%
+
+# Run comprehensive test suite
+./tests/test_sensor_execution.sh
+```
+
+### Use the Context Agent (Coming Soon)
+
 ```python
 from context_agent import ContextAgent
 
@@ -95,6 +113,15 @@ cp .env.example .env
 # Edit .env with your configuration
 ```
 
+## Features
+
+- **Real-time Context Monitoring**: Track AI model, workspace, git status, and context window usage
+- **Event-Driven Architecture**: Subscribe to state changes with typed events
+- **ZeroDB Integration**: Optional persistent state storage and agent logging
+- **Minimal Dependencies**: Lightweight bash sensor with jq for JSON processing
+- **Type-Safe**: Full type hints throughout the codebase
+- **Extensible**: Clean API for integration with IDEs, CLI tools, and monitoring systems
+
 ## Development Status
 
 This project is under active development. See [GitHub Issues](https://github.com/AINative-Studio/telemetry-agent/issues) for current progress.
@@ -103,6 +130,7 @@ This project is under active development. See [GitHub Issues](https://github.com
 
 - [x] Project structure created
 - [x] Sensor script implemented
+- [x] Sensor script verified and tested (Issue #1) ✓
 - [x] State management models defined
 - [x] Event system defined
 - [ ] Agent core implementation (Issue #2)
@@ -160,9 +188,20 @@ ZERODB_API_KEY=your_key
 ZERODB_PROJECT_ID=your_project
 ```
 
+## Documentation
+
+- [Sensor Verification Report](docs/SENSOR_VERIFICATION_REPORT.md) - Sensor script testing and validation
+- [Sensor Usage Guide](docs/SENSOR_USAGE_GUIDE.md) - How to use the context sensor
+- [API Reference](docs/api.md) - Complete API documentation
+- [Usage Examples](docs/examples.md) - Common usage patterns
+- [Configuration Guide](docs/configuration.md) - Configuration options
+- [Architecture](docs/architecture.md) - System design and components
+- [Deployment Guide](docs/deployment.md) - Installation and deployment
+- [Troubleshooting](docs/troubleshooting.md) - Common issues and solutions
+
 ## Contributing
 
-This is an AINative Studio internal project. For contribution guidelines, see the main [core repository](https://github.com/AINative-Studio/core).
+This is an AINative Studio internal project. See [CONTRIBUTING.md](CONTRIBUTING.md) for development guidelines.
 
 ## License
 
